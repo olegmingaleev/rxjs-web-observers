@@ -1,0 +1,6 @@
+{
+    "*.{ts, js}": [
+      "npm run prettier",
+      "git add"
+    ]
+}
