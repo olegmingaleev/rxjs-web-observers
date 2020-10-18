@@ -2,7 +2,7 @@ name: Publish
 
 on:
   release:
-    types: 
+    types:
       - created
 
 jobs:
@@ -10,16 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-        
+
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-        
+
       - run: npm install
       - run: npm test
       - run: npm build
-        
-      - name: 'npm publish'
-        uses: JS-DevTools/npm-publish@v1
+      - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          dry-run: true
