@@ -1,4 +1,4 @@
-import './helpers/offset';
+import './helpers/offset.spec.ts';
 import {Observable, Subscription} from 'rxjs';
 
 import {fromResize} from '../from-resize';
