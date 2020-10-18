@@ -16,6 +16,9 @@
     "intersection",
     "observer"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prettier": "prettier \"src/**/*.ts\" --write",
@@ -48,7 +51,7 @@
     "typescript": "^4.0.2"
   },
   "files": [
-    "build/main",
+    "lib",
     "!**/*.spec.*",
     "!**/*.json",
     "CHANGELOG.md",
