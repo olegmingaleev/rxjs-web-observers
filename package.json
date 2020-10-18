@@ -4,7 +4,11 @@
   "description": "rxjs-web-observers",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/rxjs-web-observers",
+  "author": {
+    "name": "Oleg Mingaleev",
+    "email": "olemingaleev@yandex.ru"
+  },
+  "repository": "https://github.com/olegmingaleev/rxjs-web-observers",
   "license": "MIT",
   "keywords": [
     "mutationobserver",
