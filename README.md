@@ -1,5 +1,7 @@
 # rxjs-web-observers
 
+[![npm version](https://img.shields.io/npm/v/rxjs-web-observers)](https://www.npmjs.com/package/rxjs-web-observers)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/rxjs-web-observers)](https://bundlephobia.com/result?p=rxjs-web-observers)
 [![Build Status](https://travis-ci.com/olegmingaleev/rxjs-web-observers.svg?token=5NeZhHMxMA772VTczkXy&branch=main)](https://travis-ci.com/olegmingaleev/rxjs-web-observers)
 [![License](https://camo.githubusercontent.com/f86cfa12fec6e29e7025d436861a09c09d6dffee/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f7061636b6167652d6275696c642d73746174732e737667)](https://camo.githubusercontent.com/f86cfa12fec6e29e7025d436861a09c09d6dffee/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f7061636b6167652d6275696c642d73746174732e737667)
 
