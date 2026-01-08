@@ -1,5 +1,0 @@
-{
-    "*.{ts, js}": [
-      "npm run prettier"
-    ]
-}
