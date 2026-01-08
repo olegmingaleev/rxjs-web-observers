@@ -1,39 +1,39 @@
-import 'intersection-observer';
-import {Observable, first} from 'rxjs';
+import "intersection-observer";
+import { Observable, first } from "rxjs";
 
-import {fromIntersection} from '../from-intersection';
+import { fromIntersection } from "../from-intersection";
 
-describe('fromIntersection', () => {
-    const target = document.createElement('div');
-    const observer$ = fromIntersection(target, {
-        root: document.body,
+describe("fromIntersection", () => {
+  const target = document.createElement("div");
+  const observer$ = fromIntersection(target, {
+    root: document.body,
+  });
+
+  it("should be instance of Observable", () => {
+    expect(observer$).toBeInstanceOf(Observable);
+  });
+
+  it("subscribe to intersection of element", (done) => {
+    observer$.pipe(first()).subscribe(([entry]) => {
+      expect(entry.target).toEqual(target);
+
+      done();
     });
 
-    it('should be instance of Observable', () => {
-        expect(observer$).toBeInstanceOf(Observable);
-    });
+    document.body.appendChild(target);
+  });
 
-    it('subscribe to intersection of element', done => {
-        observer$.pipe(first()).subscribe(([entry]) => {
-            expect(entry.target).toEqual(target);
+  it("unsubscribe from intersection of element", (done) => {
+    const target = document.createElement("div");
 
-            done();
-        });
+    fromIntersection(target, {
+      root: document.body,
+    })
+      .subscribe(() => {
+        fail();
+      })
+      .unsubscribe();
 
-        document.body.appendChild(target);
-    });
-
-    it('unsubscribe from intersection of element', done => {
-        const target = document.createElement('div');
-
-        fromIntersection(target, {
-            root: document.body,
-        })
-            .subscribe(() => {
-                fail();
-            })
-            .unsubscribe();
-
-        setTimeout(done, 100);
-    });
+    setTimeout(done, 100);
+  });
 });

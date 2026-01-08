@@ -1,29 +1,27 @@
 {
-  "compilerOptions": {
-    "incremental": true,
-    "target": "ES2022",
-    "outDir": "lib",
-    "rootDir": "src",
-    "moduleResolution": "node",
-    "module": "ES2022",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2022", "DOM"],
-    "types": ["jest", "node"]
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": ["node_modules/**", "lib/**", "**/*.spec.ts", "**/*.test.ts"]
+	"compilerOptions": {
+		"incremental": true,
+		"target": "ES2022",
+		"outDir": "lib",
+		"rootDir": "src",
+		"moduleResolution": "node",
+		"module": "ES2022",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["ES2022", "DOM"],
+		"types": ["jest", "node"]
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules/**", "lib/**", "**/*.spec.ts", "**/*.test.ts"]
 }

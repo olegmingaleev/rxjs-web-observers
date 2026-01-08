@@ -1,41 +1,41 @@
-import {Observable, first} from 'rxjs';
+import { Observable, first } from "rxjs";
 
-import {fromMutation} from '../from-mutation';
+import { fromMutation } from "../from-mutation";
 
-describe('fromMutation', () => {
-    const observedEl = document.body;
-    const observer$ = fromMutation(observedEl, {
-        childList: true,
+describe("fromMutation", () => {
+  const observedEl = document.body;
+  const observer$ = fromMutation(observedEl, {
+    childList: true,
+  });
+
+  it("should be instance of Observable", () => {
+    expect(observer$).toBeInstanceOf(Observable);
+  });
+
+  it("subscribe to element mutations and handle single of them", (done) => {
+    observer$.pipe(first()).subscribe(([mutation]) => {
+      expect(mutation).toBeInstanceOf(MutationRecord);
+      expect(mutation.addedNodes).toBeTruthy();
+
+      done();
     });
 
-    it('should be instance of Observable', () => {
-        expect(observer$).toBeInstanceOf(Observable);
-    });
+    const el = document.createElement("div");
 
-    it('subscribe to element mutations and handle single of them', done => {
-        observer$.pipe(first()).subscribe(([mutation]) => {
-            expect(mutation).toBeInstanceOf(MutationRecord);
-            expect(mutation.addedNodes).toBeTruthy();
+    observedEl.appendChild(el);
+  });
 
-            done();
-        });
+  it("unsubscribe from element mutations", (done) => {
+    observer$
+      .subscribe(() => {
+        fail("Should be unsubscribed");
+      })
+      .unsubscribe();
 
-        const el = document.createElement('div');
+    const el = document.createElement("div");
 
-        observedEl.appendChild(el);
-    });
+    observedEl.appendChild(el);
 
-    it('unsubscribe from element mutations', done => {
-        observer$
-            .subscribe(() => {
-                fail('Should be unsubscribed');
-            })
-            .unsubscribe();
-
-        const el = document.createElement('div');
-
-        observedEl.appendChild(el);
-
-        setTimeout(done, 100);
-    });
+    setTimeout(done, 100);
+  });
 });
