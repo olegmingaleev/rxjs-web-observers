@@ -2,13 +2,12 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": "./tsconfig.json" },
-  "env": { "es6": true },
-  "ignorePatterns": ["node_modules", "build", "coverage"],
+  "env": { "es6": true, "node": true },
+  "ignorePatterns": ["node_modules", "build", "coverage", "lib"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "globals": { "BigInt": true, "console": true, "WebAssembly": true }
 }

@@ -1,36 +1,29 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "esnext",
+    "target": "ES2022",
     "outDir": "lib",
     "rootDir": "src",
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "ES2022",
     "declaration": true,
-    "inlineSourceMap": true,
-    "esModuleInterop": true ,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "traceResolution": false,
-    "listEmittedFiles": false,
-    "listFiles": false,
-    "pretty": true,
-    "lib": ["es2017", "dom"],
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["jest", "node"]
   },
   "include": [
     "src/**/*.ts"
   ],
-  "exclude": ["node_modules/**"],
-  "compileOnSave": false
+  "exclude": ["node_modules/**", "lib/**", "**/*.spec.ts", "**/*.test.ts"]
 }

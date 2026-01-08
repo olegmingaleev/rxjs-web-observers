@@ -1,6 +1,5 @@
 import 'intersection-observer';
-import {Observable} from 'rxjs';
-import {first} from 'rxjs/operators';
+import {Observable, first} from 'rxjs';
 
 import {fromIntersection} from '../from-intersection';
 

@@ -1,5 +1,4 @@
-import {Observable} from 'rxjs';
-import {first} from 'rxjs/operators';
+import {Observable, first} from 'rxjs';
 
 import {fromMutation} from '../from-mutation';
 
